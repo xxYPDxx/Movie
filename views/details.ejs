@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/css/movie.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+    
+    <div class="part">
+        <div class="flexbox">
+     <div class="img1"><img  class="imgg" src="/uploads/<%= detail.image %>"></div>
+    
+    <div class="movie-details">
+        <h1><%= detail.title %> <h2 class="year"> (<%= detail.date %>)</h2></h1>
+        <div class="text">
+        <p class="time">Duration: <%= detail.length %></p>
+        <p>Genre: <%= detail.genre %></p>
+        <p>Price: ₹<%= detail.price %></p>
+        <p>Rating: <%= detail.rating %></p>
+        <p>Type: <%= detail.movietype %></p>
+    </div>
+    <form action="/addtofavourite/<%= detail._id %>" method="POST">
+        <div class="update"><button class="fav"><i class='bx bx-edit-alt' ></i>&nbsp; Add to Fav</button></div>
+    </form>
+    <form action="/addtocart/<%= detail._id %>" method="POST">
+        <div class="delete"><button class="cart"><i class='bx bx-minus-circle' ></i>&nbsp; Add to cart</button></div>
+    </form>
+    </div>
+    </div>
+    <div class="view"><div>Overview:</div>&nbsp; <div><%= detail.description %></div></div>
+</div>
+</body>
+</html>

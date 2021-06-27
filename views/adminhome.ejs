@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/movie icon.png"><!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>Movies</title>
+</head>
+<body>
+    
+<!-- --------------------- NAV ---------------------------------- -->
+
+<nav>
+    <!-- logo -->
+    <a href="#" class="logo">
+        <img width="50px" height="50px" src="/Icons/movie icon.png" alt="">
+    </a>
+     <!-- menu -->
+    <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="/add">Add Movie</a></li>
+        <li><a href="/">Log out</a></li>
+    </ul>
+    
+    <!-- search -->
+    <form action="/search" method="POST" class="search">
+        <input placeholder="Search" name="title" type="text"><button type="submit" class="btn-search" ><i class='bx bx-search'></i></button>
+    </form>
+</nav>
+
+
+<!-- ---------------------------HOME-PAGE--------------------------------- -->
+<section class="home-page">
+
+</section>
+
+<!-- --------------------SLIDER------------------------------- -->
+
+<section class="home-page-slider">
+
+<!-- Hollywood -->
+<section class="slider">
+    <h1 class="common">Hollywood movies</h1>
+<div class="carousel" data-flickity='{"wraparound": true, "groupCells": 7, "autoplay": true}'>
+
+    <% holly.forEach(movie => { %>
+    <div class="carousel-cell">
+        <img width="200" height="260" src="/uploads/<%= movie.image %>" alt="Interstellar">
+        <div class="card-content">
+            <h1 class="card-header"><%= movie.title %></h1>
+            <p class="card-text">₹<%= movie.price %></p>
+            <button class="card-button" id="add-button">ADD</button>
+            <button class="card-button" id="buy-button">BUY</button>
+            <a class="play-button" href="/adminmovie/<%= movie._id %>"><img height="50" width="50" src="/Icons/playbutton_78507.png" alt=""></a>
+        </div>
+    </div>
+    <% }) %>
+</section>
+
+<!-- bollywood -->
+<section class="slider">
+    <h1 class="common">Bollywood movies</h1>
+<div class="carousel" data-flickity='{"wraparound": true, "groupCells": 7, "autoplay": true}'>
+
+    <% bolly.forEach(movie => { %>
+    <div class="carousel-cell">
+        <img width="200" height="260" src="/uploads/<%= movie.image %>" alt="Interstellar">
+        <div class="card-content">
+            <h1 class="card-header"><%= movie.title %></h1>
+            <p class="card-text">₹<%= movie.price %></p>
+            <button class="card-button" id="add-button">ADD</button>
+            <button class="card-button" id="buy-button">BUY</button>
+            <a class="play-button" href="/adminmovie/<%= movie._id %>"><img height="50" width="50" src="/Icons/playbutton_78507.png" alt=""></a>
+        </div>
+    </div>
+    <% }) %>
+</section>
+</section>
+
+<!-- -------------------FOOTER----------------- -->
+
+<footer class="part">
+    <div class="foot">
+        <div class="v1"><a href="#" class="logo">
+            <img width="50px" height="50px" src="/Icons/movie icon.png" alt="">
+        </a></div>
+        <div class=""><ul>
+            <li><a href="#" class="title">Movie Categories</a></li>
+            <li><a href="#" class="desc">Action</a></li>
+            <li><a href="#" class="desc">Drama</a></li>
+            <li><a href="#" class="desc">Romance</a></li>
+            <li><a href="#" class="desc">Comedy</a></li>
+        </ul></div>
+        <div class="">         
+            <ul>
+                <li><a href="#" class="title">COMPANY</a></li>
+                <li><a href="#" class="desc">About us</a></li>
+                <li><a href="#" class="desc">Contact us</a></li>
+                <li><a href="#" class="desc">Privacy policy</a></li>
+                <li><a href="#" class="desc">Terms of service</a></li>
+            </ul>
+        </div>
+        <div class="">
+            <ul>
+                <li><a href="#" class="title">SUPPORT</a></li>
+                <li><a href="#" class="desc">My Account</a></li>
+                <li><a href="#" class="desc">FAQ</a></li>
+                <li><a href="#" class="desc">Contact</a></li>
+                <li><a href="#" class="desc">Help Center</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="end">©2021 All Rights Reserved. <a href="#" class="end2"> Terms of Use.</a> </div>
+</footer>
+
+
+<!-- JavaScript -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<!-- Jquery -->
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>

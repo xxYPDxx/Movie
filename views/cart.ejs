@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="/css/cart.css" rel="stylesheet">
+</head>
+<body>
+   
+        <header class="header">
+            <nav class="navbar">
+                <div class="nav">
+                <a href="#">
+                    <img class="logo" src="/Icons/movie icon.png" alt="">
+                </a>
+                    
+                    <ul class="list">
+                       
+                  <li><a href="/home" class="navlist ">Home</a></li>
+                  <li><a href="/dashboard" class="navlist">Dashboard</a></li>
+                  <li><a href="/contact" class="navlist contact">Contact</a></li>
+                  <li><a href="/" class="navlist logout">Logout</a></li>
+                </ul></div>
+               
+                   
+            </nav>
+
+        </header>
+      
+        <section class = "main-cart">
+            <div class="cart">
+                <h1>Cart</h1>
+                <% cart.forEach(buy => { %>
+                 <div class="cart-section">
+                     <div>
+                    <img src = "/uploads/<%= buy.buy_image %>" class = "cart-pic"></div>
+                    <div class="">
+                        <h2><%= buy.buy_title %> <h3 class="year"> (<%= buy.buy_date %>)</h3></h2>
+                        <div class="text"><div>
+                        <p class="time">Duration: <%= buy.buy_length %></p>
+                        <p>Genre: <%= buy.buy_genre %></p></div>
+                        <div> <p class="amount">Price: ₹<%= buy.buy_price %></p></div></div>
+                        <form action="/remove/<%= buy._id %>" method="POST"><button class="cancel"><a class = "remove">Remove</a></button></form>
+                    </div>
+                </div>
+                <% }) %>
+               </div>
+               <div class = "summary">
+                <h1 class="sum">Summary</h1>
+                
+                <div class="price">
+                    <% cart.forEach(buy => { %>
+                    <p><%= buy.buy_title %> <span> ₹<%= buy.buy_price %></span></p>
+                    <% }) %>
+                </div>
+                <p class = "price total">Total <span> ₹<%= total %></span></p>
+                <form action="/moviepurchased">
+                <button class = "cancel"><a class="remove">Checkout</a></button>
+            </form>
+            </div>
+
+    </section>
+</body>
+</html>

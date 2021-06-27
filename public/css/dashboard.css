@@ -1,0 +1,188 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  /* background: rgb(100, 1, 1);  */
+  background: rgb(80, 5, 5);
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ------------------------ NAV ------------------------------*/
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  /* background: rgb(248, 44, 85); */
+  background: black;
+  /* position: fixed; */
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+.home-page-slider {
+  position: relative;
+  scroll-padding-bottom: 100px;
+}
+li{
+  list-style: none;
+}
+.menu li a {
+  padding: 0px 20px;
+  display: flex;
+  text-transform: uppercase;
+  /* color: rgb(168, 161, 161); */
+  color: blanchedalmond;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+}
+
+.menu .top-movies:hover .dropdown-year {
+  display: block;
+}
+
+.search {
+  display: flex;
+  height: 35px;
+  /* width: 100px; */
+  justify-content: center;
+}
+
+input::placeholder {
+  color: rgb(54, 52, 52);
+  font-size: 1.6rem;
+}
+
+input {
+  /* background: rgb(168, 161, 161); */
+  background: rgb(221, 201, 172);
+}
+
+
+
+.carousel-cell {
+  width: 13%;
+  margin: 30px 10px;
+}
+
+.carousel-cell h1 {
+  font-size: 1.9rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: blanchedalmond;
+}
+
+.card-header {
+  width: 200px;
+  height: 75px;
+}
+
+.card-button {
+  background: blanchedalmond;
+  padding: 1px 15px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: solid 0.05rem;
+  color: rgb(80, 5, 5);
+}
+.btn{
+  display: flex;
+  margin-top: -2rem;
+}
+/* .carousel-cell img:hover{
+    
+} */
+
+.carousel-cell {
+  position: relative;
+  
+}
+
+.play-button {
+  position: absolute;
+  bottom: 60%;
+  right: 35%;
+  display: block;
+}
+
+.carousel-cell img:hover {
+  cursor: pointer;
+}
+/* 
+.play-button:hover{
+  display: none;
+} */
+
+/* .carousel-cell img:hover{
+    display: block;
+    cursor: pointer;
+} */
+
+.card-header {
+  color: blanchedalmond;
+}
+
+.common {
+  background: black;
+  margin-top: 5rem;
+  color: blanchedalmond;
+  text-align: center;
+  /* width:100%;  */
+}
+.btn-search{
+  background: none;
+  border: none;
+  color: blanchedalmond;
+}
+.bx-search{
+  font-size: 25px;
+  padding-left: 5px;
+}
+
+@media(max-width:900px){
+  .lang, .abt{
+    display: none;
+  }
+
+  
+}
+@media(max-width:660px){
+  .cont{
+    display: none;
+  }
+}
+@media(max-width:512px){
+  .log{
+    display: none;
+  }
+}
+@media(max-width:388px){
+  .car{
+    display: none;
+  }
+  .carousel-cell{
+    margin-left: 0;
+  
+  }
+}

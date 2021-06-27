@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/add.css">
+    <title>MOVIE</title>
+</head>
+
+
+<body>
+    <h1>Add Movies</h1>
+    <section>
+        <form action="/update/<%= detail._id %>" method="POST">
+    <div class="contact">
+    
+        <div class="form">
+    <div class="input">
+        <label for="">Movie Title</label><br>
+        <input class="input" minlength="2" maxlength="25" value="<%= detail.title %>" required type="text" name="title" id="title">
+    </div>
+    <div class="input ">
+        <label>Image</label>    
+        <!-- <input  class="input ip" value="/uploads/<%= detail.image %>" required type="file" name="image" id="image"> -->
+        <p>Image will not change while editing</p>
+    </div>
+    <div class="input">
+        <label for="">Description</label><br>
+        <input class="input" value="<%= detail.description %>" type="text" name="description" id="description" required>
+    </div>
+    <div class="input">
+        <label for="">Length &nbsp;</label><br>
+        <input class="input" value="<%= detail.length %>" type="text" name="length" id="length" cols="30" rows="40" required>
+    </div>
+    <div class="input">
+        <label for="">Price &nbsp;</label><br>
+        <input class="input" value="<%= detail.price %>" type="text" name="price" id="price" cols="30" rows="40" required>
+    </div>
+    <div class="input">
+        <label for="">Genre &nbsp;</label><br>
+        <input class="input" value="<%= detail.genre %>" type="text" name="genre" id="genre" cols="30" rows="40" required>
+    </div>
+    <div class="input">
+        <label for="">Release Date &nbsp;</label><br>
+        <input class="input" value="<%= detail.date %>" type="text" name="date" id="date" cols="30" rows="40" required>
+    </div>
+    <div class="input">
+        <label for="">Rating &nbsp;</label><br>
+        <input class="input" value="<%= detail.rating %>" type="text" name="rating" id="rating" cols="30" rows="40" required>
+    </div>
+    <div class="input">
+        <label for="">Type  &nbsp;</label><br>
+        <input class="input" value="<%= detail.movietype %>" type="text" name="movietype" id="type" cols="30" rows="40" required>
+    </div>
+    <div class="flex">
+    <div class="input">
+        <button type="submit" class="button" >ADD</button>
+    </div>
+    <div class="input">
+        <a class="button" href="/adminhome">Cancel</a>
+    </div></div>
+</div>
+</div>
+</form>
+</section>
+
+</body>
+</html>
+
+
+
+

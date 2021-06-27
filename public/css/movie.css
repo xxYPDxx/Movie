@@ -1,0 +1,150 @@
+body{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+.part{
+    margin-top: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 25px;
+}
+.flexbox{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.time{
+    padding-top: 20px;
+}
+.year{
+    font-weight: 400;
+}
+p{
+    padding-bottom: 10px;
+    font-size: 19px;
+}
+.movie-details{
+    margin-bottom: 10px;
+}
+.fav{
+    margin: 30px 0px 10px;
+    font-size: 1.6rem;
+    /* width:13rem; */
+    padding: 5px;
+    color: white;
+    background-color: red;
+    border-radius: 20px;
+}
+.back{
+    font-size: 1.6rem;
+    /* width:13rem; */
+    padding: 5px;
+    color: white;
+    background-color: red;
+    border-radius: 20px;
+}
+.cart{
+    padding: 5px;
+    font-size: 1.6rem;
+    width:13.3rem;
+    margin: 10px 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    background-color: red;
+    color: white;
+}
+.update, .delete{
+    margin-top: 20px;
+    align-items: center;
+}
+.imgg{
+    width: 300px;
+}
+.fav:hover, .cart:hover{
+    color: white;
+    background-color: red;
+}
+.view{
+    padding-top: 80px;
+    font-size: 18px;
+    display: flex;
+    margin-bottom: 100px;
+}
+/* .rating input{
+    display: none;
+}
+.rating label{
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    background: #ccc;
+}
+.rating label:before{
+  content: \f005;
+  font-family: fontAwesome ;
+} */
+.rate a{
+    color: lightblue;
+    transition: 0.3s;
+}
+.rate a:hover{
+    color: gold;
+}
+.rate #one:hover ~ a{
+    color: gold;
+}
+.rate #two:hover ~ a{
+    color: gold;
+}
+.rate #three:hover ~ a{
+    color: gold;
+}
+.rate #four:hover ~ a{
+    color: gold;
+}
+.rate #five:hover ~ a{
+    color: gold;
+}
+.rate{
+    transform: rotate(180deg);
+    padding-top: 10px;
+}
+.rate a i{
+    transform: rotate(35deg);
+}
+.rate i:hover{
+    text-shadow: 0 0 10px #00ff7f;
+}
+@media(min-width: 768px){
+    .flexbox{
+        flex-direction: row;
+       justify-content: space-evenly;
+    }
+    
+}
+@media(min-width: 1024px){
+    .flexbox{
+        justify-content: space-around;
+    }
+    .view{
+        font-size: 20px;
+    }
+}

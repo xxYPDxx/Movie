@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/movie icon.png"><!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>Movies</title>
+</head>
+<body>
+    
+<!-- --------------------- NAV ---------------------------------- -->
+
+<nav>
+    <!-- logo -->
+    <a href="#" class="logo">
+        <img width="50px" height="50px" src="/Icons/movie icon.png" alt="">
+    </a>
+     <!-- menu -->
+    <ul class="menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/dashboard" class="navlist">Dashboard</a></li>
+        <li class="cont"><a href="/contact">Contact us</a></li>
+        <li class="log"><a href="/">Log out</a></li>
+        <li  class="car"><a href="/cart"><img width="50" height="40" src="/Icons/cart icon.png" alt=""></a></li>
+    </ul>
+    
+    <!-- search -->
+    <form action="/search" method="POST" class="search">
+        <input placeholder="Search" name="title" type="text"><button type="submit" class="btn-search" ><i class='bx bx-search'></i></button>
+    </form>
+</nav>
+
+
+<!-- ---------------------------HOME-PAGE--------------------------------- -->
+<section class="home-page">
+
+</section>
+
+<!-- --------------------SLIDER------------------------------- -->
+
+<section class="home-page-slider">
+
+<!-- Hollywood -->
+<section class="slider">
+    <h1 class="common">Movies Searched</h1>
+<div class="carousel" data-flickity='{"wraparound": true, "groupCells": 7, "autoplay": true}'>
+    
+    <% detail.forEach(fav => { %>
+    <div class="carousel-cell">
+        <img width="200" height="260" src="/uploads/<%= fav.image %>" alt="">
+        <div class="card-content">
+            <h1 class="card-header"><%= fav.title %></h1>
+            <div class="btn">
+            <form action="/addtocart/<%= fav._id %>" method="POST"><button class="card-button" id="add-button">BUY</button></form>
+            <form action="/removefav/<%= fav._id %>" method="POST"><button class="card-button" id="buy-button">REMOVE</button></form>
+            <a class="play-button" href="/details/<%= fav._id %>"><img height="50" width="50" src="/Icons/playbutton_78507.png" alt=""></a>
+        </div>
+        </div>
+</div>
+<% }) %>
+
+
+</div>
+</section>
+
+
+
+<!-- JavaScript -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<!-- Jquery -->
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>
